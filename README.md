@@ -5,7 +5,7 @@ INTRODUCTION
 ------------
 This Project detects the boundary points of the object in a given image. By appliying Hough Transform techniques on an image, here we find the coordinates of location of the center and radius of the circular coins (objects) in the given image by finding the local maxima from an accumulator which helps in storing the values of the radii and coordinates of the coin circles. We have used techniques like threshold so as to obstruct the unwanted intensity values in the image like noise, convolution, Sobel edge detecting the edges of the coins and further using the gradient obtained to obtain smoother edges and morphological operations of opening and closing for removal of spurious edges. We have mainly used the algorithm given in textbook as a guideline, a few reference papers and other informative pages over the net for detecting the coins in the image. The algorithm was used along with the material provided by the TAs.
 
-![alt tag](https://raw.githubusercontent.com/manasiye/Coin-Collection/master/HoughCircles.jpg)
+![alt tag](https://raw.githubusercontent.com/manasiye/Detect-Coins-using-Hough_Transform/master/HoughCircles.jpg)
 
 APPROACH
 --------
@@ -63,7 +63,7 @@ Vertical Kernel(Dx) Horizontal Kernel (Dy)
 
 -1 0 1
 
-![alt tag](https://raw.githubusercontent.com/manasiye/Coin-Collection/master/convolutionDetectedCirclesGradHori.jpg)
+![alt tag](https://raw.githubusercontent.com/manasiye/Detect-Coins-using-Hough_Transform/master/convolutionDetectedCirclesGradHori.jpg)
 
  Then we filled recursively the edges in the horizontal edge detected image that were having pixel values present in the vertical image at neighboring locations.
 Image after Application of convolution, thinning, thresholding on the image
@@ -73,4 +73,4 @@ Image after Application of convolution, thinning, thresholding on the image
 ✑ if there is already a smaller circle found in the range of 20 pixels, then the circle finding step is avoided to location. The “storeCenter” function adds the local maxima values which contributes to the center of the circle to the “cntrPts” based thresholding and iterations of the circle formations.
 
 ✑ Result: Display the circle on intensity 255 a little outside the edges of the coins so as to include the entire coin inside the circle generated. The final image generated is as below.
-![alt tag](https://raw.githubusercontent.com/manasiye/Coin-Collection/master/DetectCirclesHoughTransform.jpg)
+![alt tag](https://raw.githubusercontent.com/manasiye/Detect-Coins-using-Hough_Transform/master/DetectCirclesHoughTransform.jpg)
